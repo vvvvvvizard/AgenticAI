@@ -1,0 +1,158 @@
+{
+  "parameter_definitions": {
+    "model": {
+      "description": "Specifies which model to use",
+      "required": true,
+      "example": "gpt-4"
+    },
+    "prompt": {
+      "description": "The input text that the model will process to generate output",
+      "required": true,
+      "example": "What is AI?"
+    },
+    "temperature": {
+      "description": "Controls the randomness of the model's output. Lower values (0-0.3) make output more deterministic, higher values (0.7-1) more random",
+      "default": 1.0,
+      "range": [0, 1],
+      "optional": true,
+      "example": 0.7
+    },
+    "max_tokens": {
+      "description": "Limits the number of tokens in the generated output",
+      "default": null,
+      "optional": true,
+      "example": 150
+    },
+    "top_p": {
+      "description": "Controls diversity via nucleus sampling. Model considers only top p most probable tokens",
+      "default": 1.0,
+      "range": [0, 1],
+      "optional": true,
+      "example": 0.9
+    },
+    "frequency_penalty": {
+      "description": "Penalizes the model for repeating the same phrases or tokens",
+      "default": 0.0,
+      "range": [0, 2],
+      "optional": true,
+      "example": 0.5
+    },
+    "presence_penalty": {
+      "description": "Encourages new topics by penalizing repeated phrases or ideas",
+      "default": 0.0,
+      "range": [0, 2],
+      "optional": true,
+      "example": 0.5
+    },
+    "stop": {
+      "description": "Strings that will stop further output when generated",
+      "default": null,
+      "optional": true,
+      "example": ["END", "\\n"]
+    },
+    "n": {
+      "description": "Number of responses to generate",
+      "default": 1,
+      "optional": true,
+      "example": 3
+    },
+    "stream": {
+      "description": "If true, output will be streamed token by token",
+      "default": false,
+      "optional": true,
+      "example": true
+    },
+    "logprobs": {
+      "description": "Number of log probabilities to return for each token",
+      "default": null,
+      "optional": true,
+      "example": 5
+    },
+    "echo": {
+      "description": "If true, includes prompt with generated text",
+      "default": false,
+      "optional": true,
+      "example": true
+    },
+    "logit_bias": {
+      "description": "Modifies likelihood of specific tokens being generated",
+      "default": null,
+      "optional": true,
+      "example": {"50256": -100}
+    },
+    "user": {
+      "description": "Tags request to specific user for tracking",
+      "default": null,
+      "optional": true,
+      "example": "user_1234"
+    }
+  },
+  "model_specific_parameters": {
+    "whisper-1": {
+      "audio": {
+        "description": "The audio file to transcribe",
+        "required": true,
+        "example": "audio_file.wav"
+      },
+      "language": {
+        "description": "Language of the audio",
+        "default": null,
+        "optional": true,
+        "example": "en"
+      }
+    },
+    "dall-e-2": {
+      "prompt": {
+        "description": "Description for image generation",
+        "required": true,
+        "example": "A futuristic city skyline at sunset"
+      },
+      "n": {
+        "description": "Number of images to generate",
+        "default": 1,
+        "optional": true,
+        "example": 1
+      },
+      "size": {
+        "description": "Size of the generated image",
+        "default": "1024x1024",
+        "optional": true,
+        "example": "1024x1024",
+        "allowed_values": ["256x256", "512x512", "1024x1024"]
+      }
+    }
+  },
+  "model_defaults": {
+    "gpt-4": {
+      "max_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    "gpt-4-32k": {
+      "max_tokens": 32768,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    "gpt-3.5-turbo": {
+      "max_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    "gpt-3.5-turbo-16k": {
+      "max_tokens": 16384,
+      "temperature": 0.7,
+      "top_p": 0.9
+    },
+    "text-embedding-ada-002": {
+      "max_tokens": null,
+      "temperature": 0.0
+    },
+    "whisper-1": {
+      "language": "en"
+    },
+    "dall-e-2": {
+      "size": "1024x1024",
+      "n": 1
+    }
+  }
+}

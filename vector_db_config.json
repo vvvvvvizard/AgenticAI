@@ -1,0 +1,89 @@
+{
+  "vector_databases": {
+    "sqlite": {
+      "description": "A lightweight database for small-scale storage of vectors.",
+      "type": "sqlite",
+      "location": "./database/sqlite_vector_db.db",
+      "metadata": {
+        "vector_search_support": false,
+        "scalability": "low",
+        "setup_complexity": "easy",
+        "best_use_case": "development and testing",
+        "cost_type": "free",
+        "limitations": "local storage only, limited vector operations"
+      }
+    },
+    "mongodb": {
+      "description": "Document-based database with vector support through Atlas.",
+      "type": "mongodb",
+      "connection_string": "mongodb://localhost:27017",
+      "metadata": {
+        "vector_search_support": "with Atlas",
+        "scalability": "high",
+        "setup_complexity": "moderate",
+        "best_use_case": "mixed data types and vectors",
+        "cost_type": "free with limitations",
+        "limitations": "requires Atlas for vector search"
+      }
+    },
+    "pinecone": {
+      "description": "Managed vector database service optimized for similarity search.",
+      "type": "pinecone",
+      "api_key": "${PINECONE_API_KEY}",
+      "environment": "production",
+      "metadata": {
+        "vector_search_support": true,
+        "scalability": "high",
+        "setup_complexity": "easy",
+        "best_use_case": "production vector search",
+        "cost_type": "paid with free tier",
+        "limitations": "requires API key and internet connection"
+      }
+    },
+    "weaviate": {
+      "description": "Open-source vector search engine with hybrid capabilities.",
+      "type": "weaviate",
+      "url": "http://localhost:8080",
+      "metadata": {
+        "vector_search_support": true,
+        "scalability": "high",
+        "setup_complexity": "moderate",
+        "best_use_case": "hybrid search applications",
+        "cost_type": "free open-source",
+        "limitations": "requires infrastructure setup"
+      }
+    },
+    "faiss": {
+      "description": "In-memory vector similarity search library.",
+      "type": "faiss",
+      "index_path": "./indexes/faiss",
+      "metadata": {
+        "vector_search_support": true,
+        "scalability": "high",
+        "setup_complexity": "moderate",
+        "best_use_case": "large-scale similarity search",
+        "cost_type": "free library",
+        "limitations": "requires memory for index"
+      }
+    },
+    "facebook_dpr": {
+      "description": "Facebook's Dense Passage Retrieval vector database",
+      "type": "dpr",
+      "index_path": "./indexes/facebook_dpr",
+      "metadata": {
+        "vector_search_support": true,
+        "scalability": "high",
+        "setup_complexity": "moderate",
+        "best_use_case": "contextual document retrieval",
+        "cost_type": "free library",
+        "limitations": "requires pre-trained models",
+        "supported_models": [
+          "facebook-dpr-ctx_encoder-single-nq-base",
+          "facebook-dpr-question_encoder-single-nq-base"
+        ],
+        "default_index": "wikipedia_2020",
+        "vector_size": 768
+      }
+    }
+  }
+}

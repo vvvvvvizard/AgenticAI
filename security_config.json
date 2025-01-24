@@ -1,0 +1,42 @@
+{
+  "authentication": {
+    "methods": [
+      {
+        "type": "api_key",
+        "header_name": "X-API-KEY",
+        "rotation_policy": "30d"
+      },
+      {
+        "type": "oauth2",
+        "token_url": "https://auth.example.com/token",
+        "client_id": "your-client-id",
+        "scopes": ["read", "write"]
+      }
+    ]
+  },
+  "encryption": {
+    "algorithm": "AES-256-GCM",
+    "key_rotation": "90d"
+  },
+  "access_control": {
+    "roles": [
+      {
+        "name": "admin",
+        "permissions": ["read", "write", "delete"]
+      },
+      {
+        "name": "user",
+        "permissions": ["read"]
+      }
+    ]
+  },
+  "rate_limiting": {
+    "enabled": true,
+    "requests_per_minute": 100,
+    "burst_limit": 50
+  },
+  "session": {
+    "timeout": 3600,
+    "renewal_interval": 1800
+  }
+}

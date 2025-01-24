@@ -1,0 +1,21 @@
+{
+  "openai": {
+    "api_keys": {
+      "normal": "YOUR_NORMAL_API_KEY",
+      "service": "YOUR_SERVICE_API_KEY"
+    },
+    "usage_tracking": {
+      "api_calls_limit": 1000,
+      "usage_count": 0
+    }
+  },
+  "google": {
+    "calendar_api_key": "YOUR_GOOGLE_API_KEY",
+    "client_id": "YOUR_CLIENT_ID",
+    "client_secret": "YOUR_CLIENT_SECRET",
+    "usage_tracking": {
+      "api_calls_limit": 500,
+      "usage_count": 0
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "prompt_templates": {
+    "base_directory": "prompts/",
+    "templates": {
+      "default": {
+        "path": "default.yaml",
+        "description": "Default prompt template for general use"
+      },
+      "creative": {
+        "path": "creative.yaml",
+        "description": "Creative writing prompt template"
+      },
+      "technical": {
+        "path": "technical.yaml",
+        "description": "Technical documentation prompt template"
+      },
+      "qa": {
+        "path": "qa.json",
+        "description": "Question answering prompt template"
+      }
+    },
+    "default_template": "default",
+    "validation": {
+      "required_fields": ["system_prompt", "user_prompt"],
+      "max_tokens": 4096
+    }
+  }
+}

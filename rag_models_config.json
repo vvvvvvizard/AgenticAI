@@ -1,0 +1,53 @@
+{
+  "rag_models": {
+    "simple_rag": {
+      "description": "Basic retrieval-augmented generation model.",
+      "embedding_model": "text-embedding-ada-002",
+      "retrieval_strategy": "simple",
+      "max_retrievals": 5
+    },
+    "simple_rag_with_memory": {
+      "description": "A basic RAG model with memory retention of past interactions.",
+      "embedding_model": "text-embedding-ada-002",
+      "retrieval_strategy": "simple",
+      "memory_retention": true,
+      "max_retrievals": 5
+    },
+    "branched_rag": {
+      "description": "RAG model where retrieval can branch based on the context.",
+      "embedding_model": "text-embedding-ada-002",
+      "retrieval_strategy": "branched",
+      "max_retrievals": 10
+    },
+    "hyde": {
+      "description": "Hypothetical Document Embedding (HyDe) approach.",
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "retrieval_strategy": "hyde",
+      "max_retrievals": 5
+    },
+    "adaptive_rag": {
+      "description": "RAG model that adapts to the type of data retrieved.",
+      "embedding_model": "text-embedding-ada-002",
+      "retrieval_strategy": "adaptive",
+      "max_retrievals": 7
+    },
+    "corrective_rag": {
+      "description": "RAG model that corrects its outputs based on retrieved documents.",
+      "embedding_model": "text-embedding-ada-002",
+      "retrieval_strategy": "corrective",
+      "max_retrievals": 5
+    },
+    "self_rag": {
+      "description": "Self-augmenting RAG model with internal feedback.",
+      "embedding_model": "text-embedding-ada-002",
+      "retrieval_strategy": "self",
+      "max_retrievals": 5
+    },
+    "agentic_rag": {
+      "description": "Agentic RAG model where agents can autonomously decide retrieval strategy.",
+      "embedding_model": "text-embedding-ada-002",
+      "retrieval_strategy": "agentic",
+      "max_retrievals": 5
+    }
+  }
+}

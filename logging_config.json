@@ -1,0 +1,50 @@
+{
+  "log_levels": {
+    "default": "info",
+    "http": "debug",
+    "database": "warn",
+    "security": "error"
+  },
+  "formats": {
+    "console": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file": "%(asctime)s | %(levelname)s | %(module)s | %(message)s"
+  },
+  "handlers": {
+    "console": {
+      "enabled": true,
+      "level": "info"
+    },
+    "file": {
+      "enabled": true,
+      "level": "debug",
+      "filename": "logs/app.log",
+      "max_size": "10MB",
+      "backup_count": 5
+    },
+    "remote": {
+      "enabled": false,
+      "endpoint": "https://logs.example.com/api/v1/logs",
+      "batch_size": 100,
+      "timeout": 5000
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "endpoints": [
+      {
+        "name": "health",
+        "url": "/health",
+        "interval": 60
+      },
+      {
+        "name": "metrics",
+        "url": "/metrics",
+        "interval": 30
+      }
+    ],
+    "alert_thresholds": {
+      "error_rate": 5,
+      "response_time": 1000
+    }
+  }
+}

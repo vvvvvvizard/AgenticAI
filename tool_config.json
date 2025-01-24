@@ -1,0 +1,27 @@
+{
+    "tools": {
+        "scrape_website": {
+            "description": "Scrape content from a website with specified depth.",
+            "approval_required": true,
+            "params": {
+                "url": "string",
+                "max_depth": "integer"
+            },
+            "defaults": {
+                "max_depth": 2
+            }
+        },
+        "fetch_calendar_events": {
+            "description": "Fetch events from Google Calendar with specified limits.",
+            "approval_required": false,
+            "params": {
+                "calendar_id": "string",
+                "max_events": "integer"
+            },
+            "defaults": {
+                "calendar_id": "primary",
+                "max_events": 5
+            }
+        }
+    }
+}

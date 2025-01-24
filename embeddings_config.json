@@ -1,0 +1,23 @@
+{
+  "embeddings": {
+    "openai": {
+      "model": "text-embedding-ada-002",
+      "description": "OpenAI embeddings model for text-based data"
+    },
+    "local": {
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "description": "Local embedding model for cost-saving purposes"
+    }
+  },
+  "vector_databases": {
+    "sql": {
+      "type": "sqlite",
+      "location": "./database/sqlite_vector_db.db"
+    },
+    "mongodb": {
+      "type": "mongodb",
+      "uri": "mongodb://localhost:27017/",
+      "database": "vector_db"
+    }
+  }
+}

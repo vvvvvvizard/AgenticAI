@@ -1,0 +1,34 @@
+{
+  "base_urls": {
+    "production": "https://api.example.com/v1",
+    "staging": "https://staging.api.example.com/v1",
+    "development": "http://localhost:8000/v1"
+  },
+  "endpoints": {
+    "users": {
+      "get_users": {
+        "path": "/users",
+        "rate_limit": "100/60s",
+        "timeout": 5000
+      },
+      "create_user": {
+        "path": "/users",
+        "rate_limit": "50/60s",
+        "timeout": 10000
+      }
+    },
+    "data": {
+      "get_data": {
+        "path": "/data",
+        "rate_limit": "200/60s",
+        "timeout": 3000
+      }
+    }
+  },
+  "global_settings": {
+    "max_retries": 3,
+    "retry_delay": 1000,
+    "timeout": 5000,
+    "cache_ttl": 300
+  }
+}
